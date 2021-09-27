@@ -1,0 +1,44 @@
+.bar {
+    fill: darkcyan;
+    height: 21px;
+    transition: fill .3s ease;
+    cursor: pointer;
+    font-family: Calibri, sans-serif;
+    opacity:0.7;
+  }
+
+  .bar text {
+    color: darkcyan;
+  }
+
+  .x-labels {
+    font-size:17px;
+    fill:rgb(141, 139, 139);
+  }
+  
+  
+  .y-labels {
+    font-size:x-large;
+    font-weight: bold;
+    fill:rgb(141, 139, 139);
+  }
+  
+  .bar:hover,
+  .bar:focus {
+    fill: rgb(2, 71, 71);
+  }
+
+  .bar:hover text,
+  .bar:focus text {
+    fill: rgb(2, 71, 71);
+  }
+
+  line {
+    stroke:lightgray;
+  }
+  
+body {
+  font-family: 'Calibri;';
+}
+
+
