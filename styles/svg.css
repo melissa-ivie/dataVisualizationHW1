@@ -1,0 +1,20 @@
+polygon{
+    fill:darkgreen;
+    stroke:lightgreen;
+    stroke-width:2px;
+}
+
+circle{
+    fill: red;
+}
+
+ellipse {
+    fill:yellow;
+    stroke:black;
+    stroke-width: 1px;
+}
+
+rect {
+    fill:brown;
+    stroke:burlywood;
+}
