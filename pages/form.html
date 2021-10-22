@@ -5,6 +5,7 @@
         <iframe src="../nav.html" frameborder="0"  width=100% ></iframe>
     </div>
     <script src="../javascript/validation.js"></script>
+    <script> function Clear(){self.location.reload()}</script>
     <form id="signUpForm" onsubmit="return validation(signUpForm)"> 
         <label for="username">Username:</label>
         <input type="text" id="username" name="username"><br><br>
@@ -109,7 +110,6 @@
             <option value="2008">2008</option>
             <option value="2009">2009</option>
             <option value="2010">2010</option>           
-
         </select>
         <br><br>
 
@@ -135,11 +135,12 @@
         <label for="music5">Classical</label>
         <input type="checkbox" id="music6" name="music" value="Country">
         <label for="6">Country</label>
-        </select>
+    
         <br><br>
 
         <input type="submit" value="Submit">
       </form>
+      <button type="button" onclick="Clear()">Clear</button>
       <br>
       <div id="errors"></div>
 </body>
