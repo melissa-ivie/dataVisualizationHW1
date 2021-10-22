@@ -1,0 +1,20 @@
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #0407aa;
+    color: white;
+  }
+
+tr:hover {background-color: #ddd;}
+
+td, th {
+    border: 1px solid black;
+    width: 70px;
+    text-align: center;
+}
+
+table {
+  padding-top: 12px
+}
