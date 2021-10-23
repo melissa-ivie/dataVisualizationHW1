@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <!-- The assignment specified that no tags other than  html, head and body were to be used, this div and iframe 
+        is just for the navigation menu it was not used for problem 3 solution-->
+    <div>
+        <iframe src="../nav.html" frameborder="0"  width=100% ></iframe>
+    </div>
+
+    <script>
+        let body = d3.select("body");
+        body.append("span").attr("class", "iconSpan");
+        body.append("div").attr("class", "in").html("In: ");
+        body.append("div").attr("class", "out").html("Out: ");
+        body.append("div").attr("class", "mouse").html("Mouse X: , Y: ");
+  
+       
+        let span = d3.select(".iconSpan");
+        span
+          .append("img")
+          .attr("src", "../images/twitter.png")
+          .attr("alt", "Twitter")
+          .attr("id", "Twitter")
+          .attr("width", 100)
+          .attr("height", 100)
+          .attr("name", "Twitter")
+          .attr("data-IconPath", "../images/twitter.png")
+          .on("mouseenter", mouseIn)
+          .on("mouseleave", mouseOut)
+          .on("dblclick", function(){
+                window.open('https://twitter.com', '_blank').focus();
+            })
+          .on("mousedown", MouseDown)
+          .on("mouseup", MouseUp);
+        span
+          .append("img")
+          .attr("src", "../images/facebook.jpeg")
+          .attr("alt", "Facebook icon")
+          .attr("id", "Facebook")
+          .attr("width", 100)
+          .attr("height", 100)
+          .attr("name", "Facebook")
+          .attr("data-IconPath", "../images/facebook.jpeg")
+          .on("mouseenter", mouseIn)
+          .on("mouseleave", mouseOut)
+          .on("dblclick", function(){
+                window.open('https://facebook.com', '_blank').focus();
+            })
+          .on("mousedown", MouseDown)
+          .on("mouseup", MouseUp);
+        span
+          .append("img")
+          .attr("src", "../images/reddit.png")
+          .attr("alt", "Reddit icon")
+          .attr("id", "Reddit")
+          .attr("width", 100)
+          .attr("height", 100)
+          .attr("name", "Reddit")
+          .attr("data-IconPath", "../images/reddit.png")
+          .on("mouseenter", mouseIn)
+          .on("mouseleave", mouseOut)
+          .on("dblclick", function(){
+                window.open('https://reddit.com', '_blank').focus();
+            })
+          .on("mousedown", MouseDown)
+          .on("mouseup", MouseUp);
+        span
+          .append("img")
+          .attr("src", "../images/linkedin.png")
+          .attr("alt", "LinkedIn icon")
+          .attr("id", "LinkedIn")
+          .attr("width", 100)
+          .attr("height", 100)
+          .attr("name", "LinkedIn")
+          .attr("data-IconPath", "../images/linkedin.png")
+          .on("mouseenter", mouseIn)
+          .on("mouseleave", mouseOut)
+          .on("dblclick", function(){
+                window.open('https://linkedin.com/', '_blank').focus();
+            })
+          .on("mousedown", MouseDown)
+          .on("mouseup", MouseUp);
+        span
+          .append("img")
+          .attr("src", "../images/instagram.png")
+          .attr("alt", "Instagram icon")
+          .attr("id", "Instagram")
+          .attr("width", 100)
+          .attr("height", 100)
+          .attr("name", "Instagram")
+          .attr("data-IconPath", "../images/instagram.png")
+          .on("mouseenter", mouseIn)
+          .on("mouseleave", mouseOut)
+          .on("dblclick", function(){
+                window.open('https://instagram.com', '_blank').focus();
+            })
+          .on("mousedown", MouseDown)
+          .on("mouseup", MouseUp);
+  
+       
+        span.on("mousemove", function (event) {
+          const coords = d3.pointer(event);
+          d3.select(".mouse").html(`Mouse X: ${coords[0]}, Y: ${coords[1]}`);
+        });
+  
+      
+        function mouseIn(event) {
+          d3.select(".in").html(`In: ${event.target.name}`);
+          this.style.opacity = 0.5;
+        }
+  
+        function mouseOut(event) {
+          this.src = this.dataset.iconpath;
+          d3.select(".out").html(`Out: ${event.target.name}`);
+          this.style.opacity = 1;
+        }
+  
+  
+        function MouseDown() {
+            event.target.height = 200;
+            event.target.width = 200;
+        }
+  
+        function MouseUp() {
+            event.target.height = 100;
+            event.target.width = 100;
+        }
+      </script>
+    
+</body>
+</html>
